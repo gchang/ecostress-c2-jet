@@ -68,8 +68,8 @@ reinstall:
 
 # Create a new Conda environment with the specified Python version
 environment:
-	# Create a Conda environment with the specified name and Python version
-	mamba create -y -n $(ENVIRONMENT_NAME) -c conda-forge python=$(PYTHON_VERSION)
+	# Create a Conda environment with the specified name and Python version, plus GDAL for its command-line tools (gdalinfo, gdalbuildvrt, gdal_translate)
+	mamba create -y -n $(ENVIRONMENT_NAME) -c conda-forge python=$(PYTHON_VERSION) gdal
 
 # Generate input dataset
 generate-input-dataset:

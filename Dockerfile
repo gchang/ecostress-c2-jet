@@ -5,7 +5,8 @@ ENV HOME /root
 FROM base as environment
 
 # Update Debian and install required dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends tzdata wget
+# gdal-bin provides the GDAL command-line tools (gdalinfo, gdalbuildvrt, gdal_translate) the PGE calls
+RUN apt-get update && apt-get install -y --no-install-recommends tzdata wget gdal-bin
 RUN pip install --upgrade pip
 
 FROM environment as installation
