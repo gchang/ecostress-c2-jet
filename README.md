@@ -37,11 +37,15 @@ password <PASSWORD>
 On macOS, there are issues with installing `pykdtree` using pip, so it's better to use a mamba environment and install the `pykdtree` mamba package.
 
 ```
-mamba create -y -n ECOv002-L3T-L4T-JET -c conda-forge python=3.11 jupyter pykdtree 
+mamba create -y -n ECOv002-L3T-L4T-JET -c conda-forge python=3.11 jupyter pykdtree gdal
 mamba activate ECOv002-L3T-L4T-JET
 ```
 
+The `gdal` package provides the GDAL command-line tools (`gdalinfo`, `gdalbuildvrt`, `gdal_translate`) that the PGE calls; pip does not install them. Outside conda, install them with `apt-get install gdal-bin`.
+
 ## Installation
+
+Note: the `ECOv002-L3T-L4T-JET` package is not published on PyPI (the name returns 404), so install it from a clone of this repository with `pip install .`, in the environment above.
 
 Install this package from PyPi using the name `ECOv002-L3T-L4T-JET` with dashes:
 
